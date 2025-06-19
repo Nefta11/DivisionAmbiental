@@ -88,8 +88,7 @@ const EditReportModal: React.FC<EditReportModalProps> = ({ report, onSave, onCan
     'Agua y Drenaje',
     'Bomberos',
     'Protección Civil',
-    'SEMAR',
-    'Guardia Nacional',
+    'Guardia Forestal',
   ];
 
   const equiposEspeciales = [
@@ -349,7 +348,7 @@ const EditReportModal: React.FC<EditReportModalProps> = ({ report, onSave, onCan
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-4">
                     <Wrench className="w-4 h-4 inline mr-2 text-emerald-600" />
@@ -387,11 +386,11 @@ const EditReportModal: React.FC<EditReportModalProps> = ({ report, onSave, onCan
                     placeholder="Describe los estudios de laboratorio requeridos..."
                   />
                 </div>
-               
+
               </div>
             </section>
 
-           
+
 
             {/* Buttons */}
             <div className="flex justify-end space-x-6 pt-8 border-t-2 border-emerald-100">

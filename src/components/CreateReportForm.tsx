@@ -74,8 +74,7 @@ const CreateReportForm: React.FC<CreateReportFormProps> = ({ onClose, onSubmit }
     'Agua y Drenaje',
     'Bomberos',
     'Protección Civil',
-    'SEMAR',
-    'Guardia Nacional',
+    'Guardia Forestal',
   ];
 
   const equiposEspeciales = [
@@ -320,19 +319,19 @@ const CreateReportForm: React.FC<CreateReportFormProps> = ({ onClose, onSubmit }
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-4">
                     <Wrench className="w-4 h-4 inline mr-2 text-emerald-600" />
                     Equipo especial necesario
                   </label>
-                    <textarea
-                      rows={4}
-                      value={formData.equipoEspecial}
-                      onChange={(e) => handleInputChange('equipoEspecial', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-emerald-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-500 transition-all duration-300"
-                      placeholder="Describe el equipo especial necesario..."
-                    />
+                  <textarea
+                    rows={4}
+                    value={formData.equipoEspecial}
+                    onChange={(e) => handleInputChange('equipoEspecial', e.target.value)}
+                    className="w-full px-4 py-3 border-2 border-emerald-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-500 transition-all duration-300"
+                    placeholder="Describe el equipo especial necesario..."
+                  />
                 </div>
               </div>
             </section>
@@ -358,11 +357,11 @@ const CreateReportForm: React.FC<CreateReportFormProps> = ({ onClose, onSubmit }
                     placeholder="Describe los estudios de laboratorio requeridos..."
                   />
                 </div>
-                
+
               </div>
             </section>
 
-            
+
             {/* Buttons */}
             <div className="flex justify-end space-x-6 pt-8 border-t-2 border-emerald-100">
               <button
