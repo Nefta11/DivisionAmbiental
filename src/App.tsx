@@ -46,7 +46,7 @@ function App() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Simulate login process
     setTimeout(() => {
       setIsLoading(false);
@@ -83,7 +83,7 @@ function App() {
       }),
       estado: 'Pendiente' as const
     };
-    
+
     setReports(prev => [newReport, ...prev]);
   };
 
@@ -94,7 +94,7 @@ function App() {
   const handleUpdateReport = (updatedReport: Report) => {
     console.log('App - Actualizando reporte:', updatedReport); // Para debug
     console.log('Reportes antes de actualizar:', reports); // Para debug
-    setReports(prev => prev.map(report => 
+    setReports(prev => prev.map(report =>
       report.id === updatedReport.id ? updatedReport : report
     ));
   };
@@ -108,17 +108,17 @@ function App() {
 
   const renderContent = () => {
     if (showManagementDashboard) {
-      return <ManagementDashboard onGoBack={handleBackFromManagementDashboard} />;
+      return <ManagementDashboard onGoBack={handleBackFromManagementDashboard} reports={reports} onUpdateReport={handleUpdateReport} />;
     }
-    
+
     switch (activeSection) {
       case 'mis-reportes':
         return (
-          <MyReports 
-            reports={reports} 
-            onDeleteReport={handleDeleteReport} 
-            onUpdateReport={handleUpdateReport} 
-            onGoToDashboard={handleGoToManagementDashboard} 
+          <MyReports
+            reports={reports}
+            onDeleteReport={handleDeleteReport}
+            onUpdateReport={handleUpdateReport}
+            onGoToDashboard={handleGoToManagementDashboard}
           />
         );
       case 'reportes':
@@ -143,35 +143,35 @@ function App() {
         <div className="absolute top-0 left-1/4 w-2 h-full bg-gradient-to-b from-transparent via-emerald-300/40 to-transparent animate-beam-1 opacity-60"></div>
         <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-transparent via-emerald-400/50 to-transparent animate-beam-2 opacity-70"></div>
         <div className="absolute top-0 left-2/3 w-3 h-full bg-gradient-to-b from-transparent via-emerald-200/30 to-transparent animate-beam-3 opacity-50"></div>
-        
+
         {/* Elegant Light Streaks */}
         <div className="absolute top-1/4 -left-20 w-96 h-1 bg-gradient-to-r from-transparent via-emerald-300/60 to-transparent animate-streak-1"></div>
         <div className="absolute top-2/3 -right-20 w-80 h-0.5 bg-gradient-to-l from-transparent via-emerald-400/70 to-transparent animate-streak-2"></div>
         <div className="absolute top-1/2 -left-32 w-72 h-2 bg-gradient-to-r from-transparent via-emerald-200/50 to-transparent animate-streak-3"></div>
-        
+
         {/* Elegant Energy Orbs */}
         <div className="absolute top-1/6 left-1/5 w-32 h-32 bg-gradient-radial from-emerald-300/40 via-emerald-400/30 to-transparent rounded-full animate-pulse-orb-1"></div>
         <div className="absolute bottom-1/4 right-1/6 w-24 h-24 bg-gradient-radial from-emerald-400/50 via-emerald-500/40 to-transparent rounded-full animate-pulse-orb-2"></div>
         <div className="absolute top-1/2 right-1/3 w-40 h-40 bg-gradient-radial from-emerald-200/30 via-emerald-300/25 to-transparent rounded-full animate-pulse-orb-3"></div>
-        
+
         {/* Elegant Wave Elements */}
         <div className="absolute top-1/3 left-0 w-full h-20 bg-gradient-to-r from-transparent via-emerald-400/15 to-transparent animate-wave-flow-1"></div>
         <div className="absolute bottom-1/3 right-0 w-full h-16 bg-gradient-to-l from-transparent via-emerald-300/20 to-transparent animate-wave-flow-2"></div>
-        
+
         {/* Elegant Floating Particles */}
         <div className="absolute bottom-0 left-1/4 w-2 h-2 bg-emerald-300/60 rounded-full animate-particle-1"></div>
         <div className="absolute bottom-0 left-1/2 w-1 h-1 bg-emerald-400/70 rounded-full animate-particle-2"></div>
         <div className="absolute bottom-0 right-1/4 w-3 h-3 bg-emerald-200/50 rounded-full animate-particle-3"></div>
         <div className="absolute bottom-0 left-1/3 w-1.5 h-1.5 bg-emerald-500/60 rounded-full animate-particle-4"></div>
         <div className="absolute bottom-0 right-1/3 w-2.5 h-2.5 bg-emerald-300/55 rounded-full animate-particle-5"></div>
-        
+
         {/* Elegant Flow Effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/8 via-emerald-400/12 via-emerald-500/10 via-emerald-600/8 to-transparent animate-rainbow-flow"></div>
       </div>
-      
+
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-emerald-900/20 backdrop-blur-sm"></div>
-      
+
       {/* Login Form */}
       <div className="w-full max-w-md mx-4 relative z-10">
         <div className="bg-white/95 backdrop-blur-2xl rounded-3xl p-8 shadow-2xl border border-emerald-200/50">
@@ -179,8 +179,8 @@ function App() {
           <div className="text-center mb-8">
             {/* Logo */}
             <div className="w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl border-3 border-white/80 p-2">
-              <img 
-                src="https://raw.githubusercontent.com/Esporadix-team/imagenes_logos/refs/heads/main/logoAmb.png" 
+              <img
+                src="https://raw.githubusercontent.com/Esporadix-team/imagenes_logos/refs/heads/main/logoAmb.png"
                 alt="División Ambiental Logo"
                 className="w-full h-full object-contain"
               />
